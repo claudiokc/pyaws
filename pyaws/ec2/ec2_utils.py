@@ -50,13 +50,9 @@ def default_region(profile='default'):
     """
 
     stderr = ' 2>/dev/null'
-<<<<<<< HEAD
-    region = subprocess.getoutput(f'aws configure get profile.{profile}.region {stderr}')
-=======
-    region = subprocess.check_output(
+region = subprocess.check_output(
         'aws configure get profile.{profile}.region {stderr}'.format(
             profile=profile, stderr=stderr))
->>>>>>> f2dbf96 (Refactor for python2.7)
 
     try:
         if region:
@@ -65,12 +61,8 @@ def default_region(profile='default'):
             os.environ['AWS_DEFAULT_REGION'] = 'us-east-1'
     except Exception as e:
         logger.exception(
-<<<<<<< HEAD
-            f'{inspect.stack()[0][3]}: Unknown error while interrogating local awscli config: {e}'
-=======
             '{i}: Unknown error while interrogating local awscli config: {e}'.format(
                 i=inspect.stack()[0][3], e=e)
->>>>>>> f2dbf96 (Refactor for python2.7)
             )
         raise
     return os.getenv('AWS_DEFAULT_REGION')

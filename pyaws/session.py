@@ -5,10 +5,6 @@ import boto3
 from botocore.exceptions import ClientError, ProfileNotFound
 from pyaws.utils import stdout_message
 from pyaws import logger
-<<<<<<< HEAD
-from pyaws._version import __version__
-=======
->>>>>>> f2dbf96 (Refactor for python2.7)
 
 try:
     from pyaws.core.oscodes_unix import exit_codes
@@ -40,16 +36,6 @@ def _profile_prefix(profile, prefix='gcreds'):
     tempProfile = prefix + '-' + profile
 
     try:
-<<<<<<< HEAD
-        if subprocess.getoutput(f'aws configure get profile.{profile}.aws_access_key_id {stderr}'):
-            return profile
-        elif subprocess.getoutput(f'aws configure get profile.{tempProfile}.aws_access_key_id {stderr}'):
-            return tempProfile
-    except Exception as e:
-        logger.exception(
-            f'{inspect.stack()[0][3]}: Unknown error while interrogating local awscli config: {e}'
-            )
-=======
         if subprocess.check_output(
             'aws configure get profile.{profile}.aws_access_key_id {stderr}'.format(
                 profile=profile, stderr=stderr)):
@@ -62,7 +48,6 @@ def _profile_prefix(profile, prefix='gcreds'):
         logger.exception(
             '{i}: Unknown error while interrogating local awscli config: {e}'.format(
                 i=inspect.stack()[0][3], e=e))
->>>>>>> f2dbf96 (Refactor for python2.7)
         raise
     return None
 
@@ -98,13 +83,8 @@ def parse_profiles(profiles):
             return _profile_prefix(profiles.strip())
     except Exception as e:
         logger.exception(
-<<<<<<< HEAD
-            f'{inspect.stack()[0][3]}: Unknown error while converting profile_names from local awscli config: {e}'
-            )
-=======
             '{i}: Unknown error while converting profile_names from local awscli config: {e}'.format(
                 i=inspect.stack()[0][3], e=e))
->>>>>>> f2dbf96 (Refactor for python2.7)
         raise
     return profile_list
 

@@ -8,14 +8,6 @@ from botocore.exceptions import ClientError
 from pyaws.session import boto3_session
 from pyaws import logger
 
-<<<<<<< HEAD
-try:
-    from pyaws oscodes_unix import exit_codes
-except Exception:
-    from pyaws oscodes_win import exit_codes    # non-specific os-safe codes
-
-=======
->>>>>>> f2dbf96 (Refactor for python2.7)
 
 def create_taglist(dict):
     """

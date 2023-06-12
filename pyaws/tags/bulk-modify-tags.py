@@ -224,12 +224,8 @@ def main():
 
                             # AFTER tag copy | put Name tag back into apply tags, ie, after_tags
                             retain_tags = select_tags(instance.tags, PRESERVE_TAGS)
-<<<<<<< HEAD
-                            for tag in (*retain_tags, *filtered_tags):
-=======
                             all_tags = retain_tags + filtered_tags
                             for tag in all_tags:
->>>>>>> f2dbf96 (Refactor for python2.7)
                                 after_tags.append(tag)
                             logger.info('For InstanceID %s, the AFTER FILTERING list of %d tags is:' % (instance.id, len(after_tags)))
                             logger.info('Tags to apply are:')

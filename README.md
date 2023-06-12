@@ -5,12 +5,7 @@
 ## Summary
 
 * Python routines and tools for use with Amazon Web Services, etc
-
-<<<<<<< HEAD
   Version: 0.4.1
-=======
-  Version: 0.4.0
->>>>>>> f2dbf96 (Refactor for python2.7)
 
 
 * * *

@@ -7,11 +7,6 @@ import os
 import subprocess
 import inspect
 import logging
-<<<<<<< HEAD
-from shutil import which
-=======
->>>>>>> f2dbf96 (Refactor for python2.7)
-
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -30,21 +25,10 @@ def awscli_region(profile_name):
     """
     awscli = 'aws'
 
-<<<<<<< HEAD
-    if not which(awscli):
-        print('Unable to locate awscli')
-        return None
-    else:
-        cmd = awscli + ' configure get ' + profile_name + '.region'
-
-    try:
-        region = subprocess.getoutput(cmd)
-=======
     cmd = awscli + ' configure get ' + profile_name + '.region'
 
     try:
         region = subprocess.check_output(cmd)
->>>>>>> f2dbf96 (Refactor for python2.7)
     except Exception:
         logger.exception(
             '%s: Failed to identify AccessKeyId used in %s profile.' %
