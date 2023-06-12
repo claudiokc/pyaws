@@ -7,7 +7,7 @@ import sys
 import inspect
 import logging
 import logging.handlers
-from pathlib import Path
+from pathlib2 import Path
 from pyaws.statics import local_config
 
 
