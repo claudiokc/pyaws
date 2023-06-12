@@ -34,7 +34,8 @@ requires = [
     'boto3>=1.9.100',
     'botocore',
     'libtools>=0.2.5',
-    'distro>=1.4.0'
+    'distro>=1.4.0',
+    'pathlib2'
 ]
 
 
@@ -79,21 +80,14 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
-<<<<<<< HEAD
-=======
         'Programming Language :: Python :: 2.7',
->>>>>>> f2dbf96 (Refactor for python2.7)
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: POSIX :: Linux'
     ],
     keywords='Amazon Web Services AWS iam ec2 lambda rds s3 sts',
     packages=find_packages(exclude=['docs', 'scripts', 'assets']),
     install_requires=requires,
-<<<<<<< HEAD
-    python_requires='>=3.6, <4',
-=======
-    python_requires='>=2.6, <4',
->>>>>>> f2dbf96 (Refactor for python2.7)
+    python_requires='>=2.7, <4',
     entry_points={
         'console_scripts': [
             'pyconfig=pyaws.cli:option_configure'
