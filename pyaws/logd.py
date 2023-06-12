@@ -112,12 +112,8 @@ def getLogger(*args, **kwargs):
                     logger.setLevel(logging.DEBUG)
 
                 else:
-<<<<<<< HEAD
-                    syslog.warning(f'{inspect.stack()[0][3]}: Log preparation fail - exit')
-=======
                     syslog.warning('{i}: Log preparation fail - exit'.format(
                         i=inspect.stack()[0][3]))
->>>>>>> f2dbf96 (Refactor for python2.7)
                     sys.exit(1)
 
             elif mode_assignment(log_mode) == 'STREAM':
