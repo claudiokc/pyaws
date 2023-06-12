@@ -35,7 +35,7 @@ requires = [
     'botocore',
     'libtools>=0.2.5',
     'distro>=1.4.0',
-    'pathlib2'
+    'pathlib'
 ]
 
 
