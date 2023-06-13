@@ -7,7 +7,6 @@ import sys
 import inspect
 import logging
 import logging.handlers
-from pathlib import Path
 from pyaws.statics import local_config
 
 
@@ -48,7 +47,7 @@ def logging_prep(mode):
                 os.makedirs(path)
 
             if not os.path.exists(log_path):
-                Path(log_path).touch(mode=0o644, exist_ok=True)
+                os.system('touch ' + log_path)
 
     except OSError as e:
         syslog.exception(
